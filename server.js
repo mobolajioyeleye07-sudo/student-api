@@ -5,6 +5,12 @@ const PORT = 4000;
 
 // Middleware
 app.use(express.json());
+app.use(express.static("public"));
+
+// yoo welcome page
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
 
 // In-memory database
  let students = [
@@ -51,18 +57,21 @@ app.post('/students', (req, res) => {
     nextOfKin, 
     stateOfOrigin,
     localGovernment,
-    course } = req.body;
+    course,
+    createdAt
+} = req.body;
 
     const newStudent = {
         id: students.length + 1,
         name,
-        email,
+        email, 
         phone,
         homeAddress,
         nextOfKin,
         stateOfOrigin,
         localGovernment,
-        course
+        course,
+        createdAt
     }
 
     students.push(newStudent);

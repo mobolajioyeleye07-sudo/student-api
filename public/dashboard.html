@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Management Portal</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       
+        <header class="portal-header">
+            <h1>Student Management System</h1>
+            <p>Manage student record with ease.</p>
+        </header>
+
+        <aside class="sidebar">
+            <nav aria-label="Sidebar Navigation">
+
+                <ul>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#register">Add Student</a></li>
+                    <li><a href="#students">View Students</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <section id="dashboard" class="dashboard">
+                <header>
+                    <h2>Dashboard</h2>
+                </header>
+
+
+            <section class="dashboard-cards">
+                <article class="card">
+                    <h3>Total Students</h3>
+                    <p id="totalStudents">0</p>
+                </article>
+
+                <article class="card">
+                    <h3>Registered Today</h3>
+                    <p id="todayStudents">0</p>
+                </article>
+
+                <article class="card">
+                    <h3>Courses</h3>
+                    <p id="totalCourses">0</p>
+                </article>
+            </section>
+            </section>
+
+            <section id="register" class="registration">
+                <header>
+                    <h2>Add New Student</h2>
+                </header>
+
+                <form id="studentForm">
+                    <fieldset>
+                        <legend>Student Information</legend>
+
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Michael Doe" name="name" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="michael@gmail.com" name="email" required>
+
+                    <label for="phone">Phone Number </label>
+                    <input type="tel" id="phone" placeholder="08012345678" maxlength="11" name="phone" required>
+
+                    <label for="homeAddress">Home Address</label>
+                    <textarea id="homeAddress" placeholder="Enter home address" name="homeAddress" required></textarea>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Next of Kin Information</legend>
+                    <label for="nextOfKin">Name</label>
+                    <input type="text" id="kinName" placeholder="John Doe" name="nextOfKin" required>
+
+                    <label for="nextOfKinPhone">Phone</label>
+                    <input type="tel" id="kinPhone" placeholder="08012345678" maxlength="11" name="nextOfKinPhone" required>
+
+                    <label for="relationship">Relationship</label>
+                    <input type="text" id="relationship" placeholder="Father" name="relationship" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Academic Information</legend>
+
+                        <label for="stateOfOrigin">State of Origin</label>
+                        <input type="text" id="stateOfOrigin" placeholder="Lagos" name="stateOfOrigin" required>
+
+                        <label for="lga">Local Government Area (LGA)</label>
+                        <input type="text" id="localGovernment" placeholder="Alimosho" name="lga" required>
+                    
+                    <label for="course">Course</label>
+                    <input type="text" id="course" placeholder="Computer Science" name="course" required>
+                    </fieldset>
+
+                    <button type="submit" id="addStudentBtn">Add Student</button>
+                </form>
+            </section>
+
+            <section id="students" class="student-records">
+                <header>
+                    <h2>Student Records</h2>
+                </header>
+
+                <table>
+                    <caption>Student Records</caption>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>State</th>
+                            <th>LGA</th>
+                            <th>Course</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="studentsTableBody">
+                        <tr>
+                            <td colspan="8">No student have been registered yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Student Management Portal. All rights reserved.</p>
+        </footer>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>
